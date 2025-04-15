@@ -13,13 +13,14 @@ if (url.includes('/user/info/detail')) {
         // 调试输出原始值（通过QuantumultX日志查看）
         console.log(`原始goldBalance: ${body.data.goldBalance}`);
         console.log(`原始totalBalance: ${body.data.totalBalance}`);
-        
+        console.log(`原始diamondBalance: ${body.data.diamonBalance}`);
         // 强制转换为数值型（避免类型错误）
         body.data.goldBalance = Number(999); 
         body.data.totalBalance = Number(999);
+        body.data.diamondBalance = Number(999);
         
         // 验证修改结果
-        if (body.data.goldBalance === 9999 && body.data.totalBalance === 9999) {
+        if (body.data.goldBalance === 999 && body.data.totalBalance === 999 && body.data.diamondBalance === Number(999) ) {
             $notify("修改成功 ✅", "", "数值已更新为9999");
         } else {
             $notify("修改失败 ❌", "", "字段赋值异常");
