@@ -1,5 +1,11 @@
 // 适用于QuantumultX的响应体修改脚本
-const url = “https:\/\/chatclient.soul-mates.ai/user/info/detail”;
+[rewrite_local]
+^https:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/soul.js
+[mitm]
+hostname = chatclient.soul-mates.ai
+
+// 适用于QuantumultX的响应体修改脚本
+const url = $request.url;
 if (url.includes('user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
@@ -14,3 +20,4 @@ if (url.includes('user/info/detail')) {
 } else {
     $done({});
 }
+
