@@ -1,10 +1,10 @@
 // 
 [Script]
-http-response ^https:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/你的用户名/仓库名/main/soul_balance_loon.js require-body=true timeout=10
+http-response ^https:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/ai_loon.js require-body=true timeout=10
 
 [MITM]
 hostname = chatclient.soul-mates.ai
-于Loon的响应体修改脚本
+//于Loon的响应体修改脚本
 if (typeof $response !== "undefined") {
     const url = $request.url;
     if (url.indexOf('/user/info/detail') !== -1) {
