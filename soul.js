@@ -1,5 +1,5 @@
 // 适用于QuantumultX的响应体修改脚本
-const url = $request.url;
+const url = “https:\/\/chatclient.soul-mates.ai/user/info/detail”;
 if (url.includes('user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
