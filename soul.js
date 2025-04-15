@@ -11,7 +11,7 @@ if (url.includes('user/info/detail')) {
         let body = JSON.parse($response.body);
         // 修改金币和总余额
               // 金币数值修改
-       bady = {
+       bady.data = {
            "goldBalance" : 9999,
            "totalBalance": 9999,
        }     // 总余额数值修改
