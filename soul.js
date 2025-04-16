@@ -11,13 +11,20 @@ hostname = *.soul-mates.ai
 // 升级版脚本（添加类型校验和调试输出）
 // 适用于QuantumultX的响应体修改脚本
 // 升级版脚本（添加类型校验和调试输出）
+// 适用于QuantumultX的响应体修改脚本
+// 升级版脚本（添加类型校验和调试输出）
 const url = $request.url;
+console.log(`当前请求的 URL: ${url}`);
 if (url.includes('/user/info/detail')) {
     try {
         console.log('开始处理响应体');
+        console.log(`原始响应体字符串: ${$response.body}`);
         // 尝试解析响应体为 JSON
         let body = JSON.parse($response.body);
         console.log('响应体解析成功');
+
+        // 输出原始响应体
+        console.log(`解析后的原始响应体: ${JSON.stringify(body)}`);
 
         // 检查响应体结构是否符合预期
         if (body && body.data && typeof body.data.goldBalance!== 'undefined' && typeof body.data.totalBalance!== 'undefined' && typeof body.data.diamondBalance!== 'undefined') {
@@ -44,11 +51,12 @@ if (url.includes('/user/info/detail')) {
             $done({ body: JSON.stringify(body) });
         } else {
             console.log('响应体结构不符合预期');
+            console.log(`实际响应体结构: ${JSON.stringify(body)}`);
             $notify("结构错误 ⚠️", "响应体结构不符合预期", "请检查日志");
             $done({});
         }
     } catch (e) {
-        console.log(`原始响应：${$response.body}\n错误详情：${e}`);
+        console.log(`原始响应：${$response.body}\n错误详情：${e.message}`);
         $notify("脚本崩溃 ⛔️", "请检查日志", e.message);  // 添加异常通知
         $done({});
     }
@@ -56,6 +64,5 @@ if (url.includes('/user/info/detail')) {
     console.log('URL 不匹配，跳过处理');
     $done({});
 }
-
 
 
