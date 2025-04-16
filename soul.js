@@ -3,7 +3,7 @@
 ^https:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/soul.js
 
 [mitm]
-hostname = *.soul-mates.ai
+hostname = *.soul-mates.ai，
 
 // 适用于QuantumultX的响应体修改脚本
 // 升级版脚本（添加类型校验和调试输出）
