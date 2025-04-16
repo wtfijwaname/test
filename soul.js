@@ -15,7 +15,7 @@ hostname = *.soul-mates.ai
 // 升级版脚本（添加类型校验和调试输出）
 const url = $request.url;
 console.log(`当前请求的 URL: ${url}`);
-if (url.includes('/user/info/detail')) {
+//if (url.includes('/user/info/detail')) {
     try {
         console.log('开始处理响应体');
         console.log(`原始响应体字符串: ${$response.body}`);
@@ -60,9 +60,10 @@ if (url.includes('/user/info/detail')) {
         $notify("脚本崩溃 ⛔️", "请检查日志", e.message);  // 添加异常通知
         $done({});
     }
-} else {
-    console.log('URL 不匹配，跳过处理');
-    $done({});
 }
+// } else {
+//     console.log('URL 不匹配，跳过处理');
+//     $done({});
+// }
 
 
