@@ -14,18 +14,15 @@ if (url.includes('/user/info/detail')) {
         let body = JSON.parse($response.body);
         console.log('响应体解析成功');
 
-        // 输出原始响应体
-        console.log(`解析后的原始响应体: ${JSON.stringify(body)}`);
-
         // 检查响应体结构是否符合预期
         if (body && body.data && typeof body.data.goldBalance!== 'undefined' && typeof body.data.totalBalance!== 'undefined' && typeof body.data.diamondBalance!== 'undefined') {
             // 调试日志（输出所有原始值）
             console.log(`原始值 | 金币:${body.data.goldBalance} 总余额:${body.data.totalBalance} 钻石:${body.data.diamondBalance}`);
 
-            // 数值修改（统一为 9999）
-            body.data.goldBalance = 9999;
-            body.data.totalBalance = 9999;
-            body.data.diamondBalance = 9999;
+            // 数值修改（统一为 999.00）
+            body.data.goldBalance = 999.00;
+            body.data.totalBalance = 999.00;
+            body.data.diamondBalance = 999.00;
 
             // 严格校验（全字段检查）
             const isSuccess = [body.data.goldBalance, body.data.totalBalance, body.data.diamondBalance]
