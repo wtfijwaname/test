@@ -10,28 +10,31 @@ const url = $request.url;
 if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
-        // 调试输出原始值（通过QuantumultX日志查看）
-        console.log(`原始goldBalance: ${body.data.goldBalance}`);
-        console.log(`原始totalBalance: ${body.data.totalBalance}`);
-        console.log(`原始diamondBalance: ${body.data.diamonBalance}`);
-        // 强制转换为数值型（避免类型错误）
-        body.data.goldBalance = Number(999); 
-        body.data.totalBalance = Number(999);
-        body.data.diamondBalance = Number(999);
+        // 调试输出
+        console.log(`原始值 | 金币:${body.data.goldBalance} 总余额:${body.data.totalBalance} 钻石:${body.data.diamondBalance}`);
         
-        // 验证修改结果
-        if (body.data.goldBalance === 999 && body.data.totalBalance === 999 ) {
-            $notify("修改成功 ✅", "", "数值已更新为9999");
-        } else {
-            $notify("修改失败 ❌", "", "字段赋值异常");
-        }
+        // 数值修改
+        body.data.goldBalance = 999;
+        body.data.totalBalance = 999;
+        body.data.diamondBalance = 999;
+        
+        // 严格校验
+        const isSuccess = [body.data.goldBalance, body.data.totalBalance, body.data.diamondBalance]
+                          .every(v => v === 999);
+        $notify(
+            isSuccess ? "修改成功 ✅" : "部分失败 ⚠️",
+            `金币:${body.data.goldBalance}`,
+            `总余额:${body.data.totalBalance} | 钻石:${body.data.diamondBalance}`
+        );
+        
         $done({ body: JSON.stringify(body) });
     } catch (e) {
-        console.log(`脚本错误：${e}`);
+        console.log(`原始响应：${$response.body}\n错误详情：${e}`);
         $done({});
     }
 } else {
     $done({});
 }
+
 
 
