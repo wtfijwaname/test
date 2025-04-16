@@ -1,5 +1,5 @@
 // 适用于QuantumultX的响应体修改脚本
-rewrite_local]
+[rewrite_local]
 ^https:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/soul.js
 
 [mitm]
