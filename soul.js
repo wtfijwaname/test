@@ -20,7 +20,7 @@ if (url.includes('/user/info/detail')) {
         body.data.diamondBalance = Number(999);
         
         // 验证修改结果
-        if (body.data.goldBalance === 999 && body.data.totalBalance === 999 && body.data.diamondBalance === Number(999) ) {
+        if (body.data.goldBalance === 999 && body.data.totalBalance === 999 ) {
             $notify("修改成功 ✅", "", "数值已更新为9999");
         } else {
             $notify("修改失败 ❌", "", "字段赋值异常");
