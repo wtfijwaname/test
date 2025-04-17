@@ -10,7 +10,7 @@ const url = $request.url;
 if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
-        if (body.data) = {
+        if (body) = {
             
   "pageSize" : null,
   "current" : null,
