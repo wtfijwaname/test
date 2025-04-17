@@ -11,9 +11,44 @@ if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
         if (body.data) {
-            body.data.goldBalance = 999;
-            body.data.totalBalance = 999;
-            body.data.diamondBalance = 999;
+            {
+  "pageSize" : null,
+  "current" : null,
+  "data" : {
+    "createRoleCount" : 0,
+    "status" : 1,
+    "lastOriginateTime" : ,
+    "channelCode" : 102,
+    "likeRoleCount" : 0,
+    "nickname" : "只想白嫖",
+    "updateTime" : ,
+    "sex" : "1",
+    "realName" : "telegram_username",
+    "regClientType" : 2,
+    "membershipDue" : 0,
+    "regIp" : "",
+    "isFirstLogin" : true,
+    "regDevice" : "telegram_device",
+    "publishRoleCount" : 0,
+    "id" : 491916291,
+    "email" : null,
+    "parentId" : 0,
+    "memberType" : 0,
+    "lastLoginTime" : ,
+    "collectRoleCount" : 1,
+    "avatar" : "",
+    "createTime" : ,
+    "thirdId" : null,
+    "goldBalance" : 999,
+    "totalBalance" : 999,
+    "botShareUrl" : "https://t.me",
+    "diamondBalance" : 999
+  },
+  "code" : 1,
+  "msg" : null,
+  "totalData" : null,
+  "total" : null
+            
         }
         $done({ body: JSON.stringify(body) });
     } catch (e) {
@@ -23,6 +58,47 @@ if (url.includes('/user/info/detail')) {
 } else {
     $done({});
 }
+/*
+
+{
+  "pageSize" : null,
+  "current" : null,
+  "data" : {
+    "createRoleCount" : 0,
+    "status" : 1,
+    "lastOriginateTime" : 1744640491233,
+    "channelCode" : 102,
+    "likeRoleCount" : 0,
+    "nickname" : "只想白嫖",
+    "updateTime" : 1744640491233,
+    "sex" : "1",
+    "realName" : "telegram_username",
+    "regClientType" : 2,
+    "membershipDue" : 0,
+    "regIp" : "",
+    "isFirstLogin" : false,
+    "regDevice" : "telegram_device",
+    "publishRoleCount" : 0,
+    "id" : 491916291,
+    "email" : null,
+    "parentId" : 0,
+    "memberType" : 0,
+    "lastLoginTime" : 1744790599570,
+    "collectRoleCount" : 1,
+    "avatar" : "",
+    "createTime" : 1744640491233,
+    "thirdId" : null,
+    "goldBalance" : 0,
+    "totalBalance" : 4,
+    "botShareUrl" : "https://t.me/x_chat_ai002_bot/soulAi",
+    "diamondBalance" : 4
+  },
+  "code" : 1,
+  "msg" : null,
+  "totalData" : null,
+  "total" : null
+}
+*/
 // const url = $request.url;
 // console.log(`当前请求的 URL: ${url}`);
 // if (url.includes('/user/info/detail')) {
