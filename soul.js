@@ -11,7 +11,7 @@ if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
         if (body.data) {
-            {
+            
   "pageSize" : null,
   "current" : null,
   "data" : {
