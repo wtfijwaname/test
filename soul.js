@@ -5,31 +5,38 @@
 [mitm]
 hostname = chatclient.soul-mates.ai
 
-// 适用于QuantumultX的响应体修改脚本
-const url = $request.url;
-if (url.includes('https://chatclient.soul-mates.ai/user/info/detail')) {
-    try {
-        // 检查响应体是否为空
-        if ($response.body) {
-            let body = JSON.parse($response.body);
-            // 检查 data 字段是否存在
-            if (body && typeof body === 'object' && body.hasOwnProperty('data')) {
-                body.data.goldBalance = 999;
-                body.data.totalBalance = 999;
-                body.data.diamondBalance = 999;
-            }
-            $done({ body: JSON.stringify(body) });
-        } else {
-            console.log('响应体为空');
-            $done({});
-        }
-    } catch (e) {
-        console.log(`解析响应体出错: ${e.message}`);
-        $done({});
-    }
-} else {
-    $done({});
+function main(response) {
+    let json = JSON.parse(response.body);
+    json.data.totalBalance = 999;
+    response.body = JSON.stringify(json);
+    return response;
 }
+
+// 适用于QuantumultX的响应体修改脚本
+// const url = $request.url;
+// if (url.includes('https://chatclient.soul-mates.ai/user/info/detail')) {
+//     try {
+//         // 检查响应体是否为空
+//         if ($response.body) {
+//             let body = JSON.parse($response.body);
+//             // 检查 data 字段是否存在
+//             if (body && typeof body === 'object' && body.hasOwnProperty('data')) {
+//                 body.data.goldBalance = 999;
+//                 body.data.totalBalance = 999;
+//                 body.data.diamondBalance = 999;
+//             }
+//             $done({ body: JSON.stringify(body) });
+//         } else {
+//             console.log('响应体为空');
+//             $done({});
+//         }
+//     } catch (e) {
+//         console.log(`解析响应体出错: ${e.message}`);
+//         $done({});
+//     }
+// } else {
+//     $done({});
+// }
     
 /*
 
