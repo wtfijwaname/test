@@ -1,8 +1,7 @@
 [rewrite_local]
-^https://chatclient.soul - mates.ai/chat/daily/task/dailyTaskInfo url 
-
-[mitm]
-# 指定需要 MITM 的域名
+// ^https://chatclient.soul-mates.ai/chat/daily/task/dailyTaskInfo url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/ai_renew.js
+// ^http:\/\/raw\.githubusercontent\.com\/Yu9191\/Rewrite\/refs\/heads\/main\/ydm\.js url re[mitm]
+^http:\/\/chatclient\.soul-mates\.ai\/chat\/daily\/task\/dailyTaskInfo url  script-response-body https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/ai_renew.js
 hostname = chatclient.soul-mates.ai
 // 定义响应体
 const response = {
