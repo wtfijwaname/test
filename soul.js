@@ -10,46 +10,38 @@ const url = $request.url;
 if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
-        if (body) = {
-            
-  "pageSize" : null,
-  "current" : null,
-  "data" : {
-    "createRoleCount" : 0,
-    "status" : 1,
-    "lastOriginateTime" : ,
-    "channelCode" : 102,
-    "likeRoleCount" : 0,
-    "nickname" : "只想白嫖",
-    "updateTime" : ,
-    "sex" : "1",
-    "realName" : "telegram_username",
-    "regClientType" : 2,
-    "membershipDue" : 0,
-    "regIp" : "",
-    "isFirstLogin" : false,
-    "regDevice" : "telegram_device",
-    "publishRoleCount" : 0,
-    "id" : 491916291,
-    "email" : null,
-    "parentId" : 0,
-    "memberType" : 0,
-    "lastLoginTime" : ,
-    "collectRoleCount" : 1,
-    "avatar" : "",
-    "createTime" : ,
-    "thirdId" : null,
+        if (body.data)   {
+    // "createRoleCount" : 0,
+    // "status" : 1,
+    // "lastOriginateTime" : ,
+    // "channelCode" : 102,
+    // "likeRoleCount" : 0,
+    // "nickname" : "只想白嫖",
+    // "updateTime" : ,
+    // "sex" : "1",
+    // "realName" : "telegram_username",
+    // "regClientType" : 2,
+    // "membershipDue" : 0,
+    // "regIp" : "",
+    // "isFirstLogin" : false,
+    // "regDevice" : "telegram_device",
+    // "publishRoleCount" : 0,
+    // "id" : 491916291,
+    // "email" : null,
+    // "parentId" : 0,
+    // "memberType" : 0,
+    // "lastLoginTime" : ,
+    // "collectRoleCount" : 1,
+    // "avatar" : "",
+    // "createTime" : ,
+    // "thirdId" : null,
     "goldBalance" : 999,
     "totalBalance" : 999,
-    "botShareUrl" : "https://t.me",
+    // "botShareUrl" : "https://t.me",
     "diamondBalance" : 999
-  },
-  "code" : 1,
-  "msg" : null,
-  "totalData" : null,
-  "total" : null
+  }
             
-        }
+        
         $done({ body: JSON.stringify(body) });
     } catch (e) {
         console.log(`解析响应体出错: ${e.message}`);
