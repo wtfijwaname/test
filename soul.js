@@ -10,7 +10,8 @@ const url = $request.url;
 if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
-        if body.data  = {
+        if body  = {
+            "data":{ 
     // "createRoleCount" : 0,
     // "status" : 1,
     // "lastOriginateTime" : ,
@@ -26,7 +27,7 @@ if (url.includes('/user/info/detail')) {
     // "isFirstLogin" : false,
     // "regDevice" : "telegram_device",
     // "publishRoleCount" : 0,
-     "id" : 491916299,
+    // "id" : 491916299,
     // "email" : null,
     // "parentId" : 0,
     // "memberType" : 0,
@@ -39,6 +40,7 @@ if (url.includes('/user/info/detail')) {
     "totalBalance" : 999,
     // "botShareUrl" : "https://t.me",
     "diamondBalance" : 999
+        }
   }
             
         
