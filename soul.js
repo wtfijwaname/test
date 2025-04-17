@@ -7,15 +7,22 @@ hostname = chatclient.soul-mates.ai
 
 // 适用于QuantumultX的响应体修改脚本
 const url = $request.url;
-if (url === 'https://chatclient.soul-mates.ai/user/info/detail') {
+if (url.includes('https://chatclient.soul-mates.ai/user/info/detail')) {
     try {
-        let body = JSON.parse($response.body);
-        if (body.data) {
-            body.data.goldBalance = 999;
-            body.data.totalBalance = 999;
-            body.data.diamondBalance = 999;
+        // 检查响应体是否为空
+        if ($response.body) {
+            let body = JSON.parse($response.body);
+            // 检查 data 字段是否存在
+            if (body && typeof body === 'object' && body.hasOwnProperty('data')) {
+                body.data.goldBalance = 999;
+                body.data.totalBalance = 999;
+                body.data.diamondBalance = 999;
+            }
+            $done({ body: JSON.stringify(body) });
+        } else {
+            console.log('响应体为空');
+            $done({});
         }
-        $done({ body: JSON.stringify(body) });
     } catch (e) {
         console.log(`解析响应体出错: ${e.message}`);
         $done({});
@@ -23,6 +30,7 @@ if (url === 'https://chatclient.soul-mates.ai/user/info/detail') {
 } else {
     $done({});
 }
+    
 /*
 
 {
