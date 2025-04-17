@@ -26,7 +26,7 @@ if (url.includes('/user/info/detail')) {
     // "isFirstLogin" : false,
     // "regDevice" : "telegram_device",
     // "publishRoleCount" : 0,
-    // "id" : 491916291,
+     "id" : 491916299,
     // "email" : null,
     // "parentId" : 0,
     // "memberType" : 0,
