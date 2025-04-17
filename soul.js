@@ -10,7 +10,7 @@ const url = $request.url;
 if (url.includes('/user/info/detail')) {
     try {
         let body = JSON.parse($response.body);
-        if (body.data) {
+        if (body.data) = {
             
   "pageSize" : null,
   "current" : null,
@@ -27,7 +27,7 @@ if (url.includes('/user/info/detail')) {
     "regClientType" : 2,
     "membershipDue" : 0,
     "regIp" : "",
-    "isFirstLogin" : true,
+    "isFirstLogin" : false,
     "regDevice" : "telegram_device",
     "publishRoleCount" : 0,
     "id" : 491916291,
