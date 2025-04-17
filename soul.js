@@ -6,10 +6,19 @@
 hostname = chatclient.soul-mates.ai
 
 function main(response) {
-    let json = JSON.parse(response.body);
-    json.data.totalBalance = 999;
-    response.body = JSON.stringify(json);
-    return response;
+    console.log('原始响应体:', response.body);
+    try {
+        let json = JSON.parse(response.body);
+        console.log('解析后的 JSON:', json);
+        if (json.data) {
+            json.data.totalBalance = 999;
+            response.body = JSON.stringify(json);
+        }
+        return response;
+    } catch (e) {
+        console.log('JSON 解析错误:', e);
+        return response;
+    }
 }
 
 // 适用于QuantumultX的响应体修改脚本
