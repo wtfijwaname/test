@@ -19,20 +19,15 @@ let key = {
     ],
     "sigBytes": 16
 }
-if (url.indexOf('/api/common_ads') !== -1) {
-    let data = JSON.parse(body)
-    let json = JSON.parse(decryptAES_CBC(data["x-data"]))
-    delete json.data.items
-    data["x-data"] = encryptAES_CBC(JSON.stringify(json))
-    $.done({body :JSON.stringify(data)})
-}
-if (url.indexOf('/user/info/detail') !== -1){
-    let data = JSON.parse(body)
-    let json = JSON.parse(decryptAES_CBC(data["x-data"]))
 
-    json.data.goldBalance = 999;
-    json.data.totalBalance = 999;
-    json.data.diamondBalance = 999;
+
+if (url.includes('/user/info/detail')){
+    let data = JSON.parse(body)
+  //  let json = JSON.parse(decryptAES_CBC(data["x-data"]))
+
+    data.goldBalance = 999;
+    data.totalBalance = 999;
+    data.diamondBalance = 999;
     // json.data.user.name = '小白解锁'
     // json.data.user.username = '小白解锁'
     // json.data.user.vip_type = 5
@@ -46,7 +41,7 @@ if (url.indexOf('/user/info/detail') !== -1){
     // json.data.user.novle_vip_type = 5
     // json.data.user.perfect_vip_type = 5
     // json.data.user.vip_days = 1000
-    data["x-data"] = encryptAES_CBC(JSON.stringify(json))
+   // data["x-data"] = encryptAES_CBC(JSON.stringify(json))
     $.done({body :JSON.stringify(data)})
 }
 function decryptAES_CBC(data) {
