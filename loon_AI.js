@@ -1,7 +1,7 @@
 
 [Plugin]
 # 钻石999修改器
-http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/你的用户名/仓库名/main/diamond-modifier.js,requires-body=true,tag=钻石修改,enable=true
+http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/blob/main/ai_loon.js requires-body=true,tag=钻石修改,enable=true
 
 [MITM]
 hostname = chatclient.soul-mates.ai
