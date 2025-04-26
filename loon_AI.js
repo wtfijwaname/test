@@ -1,8 +1,9 @@
 [Plugin]
-http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/loon_AI.js,requires-body=true,tag=钻石999修改,enable=true
+http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/main/loon_AI.js,requires-body=true,tag=钻石999修改,enable=true
 
 [MITM]
 hostname = chatclient.soul-mates.ai
+
 // loon_AI.js 修改版 (带提醒功能)
 let url = $request.url;
 let body = $response.body;
