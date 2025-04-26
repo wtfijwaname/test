@@ -1,7 +1,7 @@
 
 [Plugin]
-# 钻石999修改器
-http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/loon_AI.js requires-body=true,tag=钻石修改,enable=true
+# 钻石修改器 (v2.0)
+http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/loon_AI.js,requires-body=true,tag=钻石999修改,enable=true
 
 [MITM]
 hostname = chatclient.soul-mates.ai
