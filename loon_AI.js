@@ -2,7 +2,6 @@
 ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/loon_AI.js
 [mitm]
 hostname = chatclient.soul-mates.ai
-// loon_AI.js (Quantumult X 适配版)
 const url = $request.url;
 let body = $response.body;
 
