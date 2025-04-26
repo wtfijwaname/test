@@ -7,4 +7,4 @@ const url = $request.url;
 let body = $response.body;
 
 if (url.includes("/user/info/detail")) {
-    console.log("📡 请求捕获 | URL: " + url);
+    $notify("捕捉通知"，“匹配成功”，“地址”+ url);
