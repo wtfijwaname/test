@@ -1,5 +1,5 @@
 [Plugin]
-http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/main/loon_AI.js,requires-body=true,tag=钻石999修改,enable=true
+http-response ^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail script-path=https://raw.githubusercontent.com/wtfijwaname/test/main/loon_AI.js,requires-body=true
 
 [MITM]
 hostname = chatclient.soul-mates.ai
