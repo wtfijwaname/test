@@ -1,5 +1,5 @@
 [rewrite_local]
-^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/refs/heads/main/loon_AI.js
+^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/loon_AI.js
 [mitm]
 hostname = chatclient.soul-mates.ai
 // loon_AI.js (Quantumult X 适配版)
