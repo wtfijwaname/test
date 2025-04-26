@@ -1,9 +1,13 @@
 [rewrite_local]
-^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail url  script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/ai_renew.js
+^https?:\/\/chatclient\.soul-mates\.ai\/user\/info\/detail.*$ url script-response-body https://raw.githubusercontent.com/wtfijwaname/test/main/ai_renew.js
+
 [mitm]
 hostname = chatclient.soul-mates.ai
-
-const url = $request.url;
-
-if (url.includes("/user/info/detail")) {
-    $notify("捕捉通知","匹配成功","地址"+ url);
+// 触发系统通知
+$notify(
+  "🔔 目标网址访问提醒", 
+  "检测到 soul-mates.ai 请求", 
+  "请求时间：" + new Date().toLocaleString() + "\nURL：" + $request.url
+);
+// 继续传递原始响应（不修改内容）
+$done({});
