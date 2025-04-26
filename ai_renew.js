@@ -4,7 +4,6 @@
 hostname = chatclient.soul-mates.ai
 
 const url = $request.url;
-let body = $response.body;
 
 if (url.includes("/user/info/detail")) {
-    $notify("捕捉通知"，“匹配成功”，“地址”+ url);
+    $notify("捕捉通知","匹配成功","地址"+ url);
