@@ -1,5 +1,4 @@
 [rewrite_local]
-# 多邻国全功能解锁（QX专用版）
 ^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/\d+\?.*fields=subscriberLevel url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
 ^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/\d+\/available-features url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
 ^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/batch url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
