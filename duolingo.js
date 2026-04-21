@@ -1,8 +1,8 @@
 [rewrite_local]
-# 调试规则1：捕获所有duolingo请求并显示
-^https?:\/\/.*\.duolingo\.com url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/response-body.js
-^https?:\/\/.*\.duolingo\.net url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/response-body.js
-^https?:\/\/.*\.duolingo\.org url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/response-body.js
+# 多邻国全功能解锁（QX专用版）
+^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/\d+\?.*fields=subscriberLevel url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
+^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/\d+\/available-features url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
+^https?:\/\/ios-api\.duolingo\.com\/2017-06-30\/batch url script-response-body https://raw.githubusercontent.com/chavyleung/scripts/master/duolingo/duolingo.js
 
 [mitm]
-hostname = *.duolingo.com, *.duolingo.net, *.duolingo.org
+hostname = ios-api.duolingo.com
